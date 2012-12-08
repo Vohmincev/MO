@@ -1,0 +1,134 @@
+# depslib dependency file v1.0
+1353665590 source:c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\parser.cpp
+	"parser.hpp"
+
+1353288950 p"
+
+1353368257 c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\parser.hpp
+	<iostream>
+	<cmath>
+	<string>
+	<vector>
+	<stack>
+	<cstring>
+	<cstdlib>
+	<sstream>
+
+1353288932 
+
+1354127043 source:c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\main.cpp
+	<iostream>
+	<windows.h>
+	"methods.hpp"
+	<sstream>
+
+1353289384 pp"
+
+1354122720 c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\methods.hpp
+	"parser.hpp"
+	"Vector.hpp"
+	<map>
+
+1353368290 c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\vector.hpp
+	"matrix.hpp"
+
+1354128312 source:c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\methods.cpp
+	"methods.hpp"
+
+1353665498 source:c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\vector.cpp
+	"Vector.hpp"
+
+1353540639 c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\matrix.hpp
+	<vector>
+	<iostream>
+	<cstdarg>
+	<cmath>
+	<cstring>
+
+1353665498 source:c:\users\sergey\desktop\ó÷åáà\ìåòîäû îïòèìèçàöèè\lab5\matrix.cpp
+	"matrix.hpp"
+
+1353288831 source:/media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/Vector.cpp
+	"Vector.hpp"
+
+1353288831 /media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/Vector.hpp
+	"matrix.hpp"
+
+1353288932 /media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/matrix.hpp
+	<vector>
+	<iostream>
+	<cstdarg>
+	<cmath>
+	<cstring>
+
+1353289445 source:/media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/main.cpp
+	<iostream>
+	<windows.h>
+	"methods.hpp"
+
+1353289010 /media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/methods.hpp
+	"parser.hpp"
+	"Vector.hpp"
+
+1353288873 /media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/parser.hpp
+	<iostream>
+	<cmath>
+	<string>
+	<vector>
+	<stack>
+	<cstring>
+	<cstdlib>
+	<sstream>
+
+1353288950 source:/media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/matrix.cpp
+	"matrix.hpp"
+
+1353289584 source:/media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/methods.cpp
+	"methods.hpp"
+
+1353288872 source:/media/EEFA3EABFA3E7047/Users/Sergey/Desktop/ÑƒÑ‡ÐµÐ±Ð°/ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸/lab5/parser.cpp
+	"parser.hpp"
+
+1354811867 source:c:\users\sergey\desktop\ó÷åáà\lab5\main.cpp
+	<iostream>
+	<windows.h>
+	"methods.hpp"
+	<sstream>
+
+1354746557 c:\users\sergey\desktop\ó÷åáà\lab5\methods.hpp
+	"parser.hpp"
+	"Vector.hpp"
+	<map>
+
+1353368258 c:\users\sergey\desktop\ó÷åáà\lab5\parser.hpp
+	<iostream>
+	<cmath>
+	<string>
+	<vector>
+	<stack>
+	<cstring>
+	<cstdlib>
+	<sstream>
+
+1354744481 c:\users\sergey\desktop\ó÷åáà\lab5\vector.hpp
+	"matrix.hpp"
+
+1354734064 c:\users\sergey\desktop\ó÷åáà\lab5\matrix.hpp
+	<vector>
+	<iostream>
+	<cstdarg>
+	<cmath>
+	<cstring>
+
+1354811907 source:c:\users\sergey\desktop\ó÷åáà\lab5\matrix.cpp
+	"matrix.hpp"
+
+1353665592 source:c:\users\sergey\desktop\ó÷åáà\lab5\parser.cpp
+	"parser.hpp"
+
+1354744468 source:c:\users\sergey\desktop\ó÷åáà\lab5\vector.cpp
+	"Vector.hpp"
+
+1354811824 source:c:\users\sergey\desktop\ó÷åáà\lab5\methods.cpp
+	"methods.hpp"
+
