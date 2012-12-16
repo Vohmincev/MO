@@ -10,6 +10,7 @@ public:
     Vector(int s); // конструктор вектора
     Vector(int s, double a ...); // конструктор с вводом всех элементов вектора вручную
     void setValue(int s ...); // задание элементов вектора
+    void setValue(int pos, double value); // установка значения в конкретную позицию
     void setZero(); // сделать вектор состоящим из "0"
     int getSize(); // получение размера вектора
     void setSize(int); // задание размера вектора

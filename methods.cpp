@@ -146,6 +146,7 @@ Vector Methods::findMinimum(string method, string expression, Vector start_x, in
     map["DFP"] = &Methods::DFP;
     map["FR"] = &Methods::FR;
     map["Newton"] = &Methods::Newton;
+    map["p"] = &Methods::Powell;
     Callback function = map[method];
     return (this->*function)(start_x, k);
 }
@@ -527,4 +528,70 @@ Vector Methods::Newton(Vector start_x, int& k)
         system("pause");
     }
     return xt;
+}
+
+Vector Methods::Powell(Vector start_x, int& k)
+{
+    k = 1;
+    int n = start_x.getSize();
+    xt = start_x;
+    Vector x_last(n);
+    //формирование массива ортов
+    Vector* pi[n];
+    Vector d(n);
+    double A[n];
+    double M[n];
+    double alpha;
+    for(int i = 0; i < n; i++)
+    {
+        pi[i] = new Vector(n);
+        pi[i]->setValue(i,1);
+    }
+    //pi[n] = new Vector(n);
+    //pi[n]->setValue(0,1);
+while(1) {
+    for(int i = 0; i < n; i++) //система одномерных поисков вдоль направлений pi
+    {
+        x_last = xt;
+        alpha = davidon();
+        xt = xt + *pi[i] * alpha;
+        A[i] = alpha;
+        M[i] = f(x_last) - f(xt);
+        cout << "M["<<i<<"] = " << M[i] << endl;
+    }
+    x_last = xt;
+    d = xt - start_x;
+    alpha = davidon();
+    xt = xt + d*alpha;
+    if( (d.getNorm() <= EPSILON) && (fabs( (f(x_last) - f(start_x))/f(x_last) ) <=EPSILON) ) return xt;
+    int max = maxArr(A, n);
+    pt = *pi[max];
+    if(4*M[max]*(f(x_last)-f(xt)) > (f(start_x)-f(x_last)-M[max])*(f(start_x)-f(x_last)-M[max]))
+    {
+        //pt = d/d.getNorm();
+        //*pi[0] = pt;
+        //for(int i = 1; i < n; i++)
+        //{
+          //  *pi[i] = pt;
+
+        //}
+        //*pi[n] = d;
+    }
+    k++;
+    start_x = xt;
+}
+
+
+    return Vector(2);
+}
+
+int Methods::maxArr(double *arr, int size)
+{
+    int i = 0;
+    int max = i;
+    for(int i = 1; i < size; i++)
+    {
+        if(arr[i]>arr[max]) max = i;
+    }
+    return max;
 }

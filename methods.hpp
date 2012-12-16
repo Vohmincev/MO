@@ -3,7 +3,7 @@
 #include <map>
 #ifndef METHODS_HPP_INCLUDED
 #define METHODS_HPP_INCLUDED
-#define EPSILON pow(10, -4)
+#define EPSILON 10e-6
 
 class Methods
 {
@@ -43,6 +43,9 @@ private:
     Vector FR(Vector, int&); // Метод сопряженных градиентов по формуле Флетчера-Ривса - лаб. №8
     Vector DFP(Vector, int&); // метод переменной метрики, использующий формулу Дэвидона-Флетчера-Пауэла - лаб. № 7
     Vector Newton(Vector, int&);
+    Vector Powell(Vector start_x, int& k);
+    int maxArr(double *arr, int size);
+
 
 };
 

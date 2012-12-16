@@ -132,3 +132,46 @@
 1354811824 source:c:\users\sergey\desktop\учеба\lab5\methods.cpp
 	"methods.hpp"
 
+1354811867 source:c:\users\sergey\documents\github\mo\main.cpp
+	<iostream>
+	<windows.h>
+	"methods.hpp"
+	<sstream>
+
+1355608414 c:\users\sergey\documents\github\mo\methods.hpp
+	"parser.hpp"
+	"Vector.hpp"
+	<map>
+
+1353368258 c:\users\sergey\documents\github\mo\parser.hpp
+	<iostream>
+	<cmath>
+	<string>
+	<vector>
+	<stack>
+	<cstring>
+	<cstdlib>
+	<sstream>
+
+1355594871 c:\users\sergey\documents\github\mo\vector.hpp
+	"matrix.hpp"
+
+1354734064 c:\users\sergey\documents\github\mo\matrix.hpp
+	<vector>
+	<iostream>
+	<cstdarg>
+	<cmath>
+	<cstring>
+
+1354811907 source:c:\users\sergey\documents\github\mo\matrix.cpp
+	"matrix.hpp"
+
+1353665592 source:c:\users\sergey\documents\github\mo\parser.cpp
+	"parser.hpp"
+
+1355594944 source:c:\users\sergey\documents\github\mo\vector.cpp
+	"Vector.hpp"
+
+1355608328 source:c:\users\sergey\documents\github\mo\methods.cpp
+	"methods.hpp"
+

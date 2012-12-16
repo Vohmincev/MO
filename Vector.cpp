@@ -39,6 +39,11 @@ void Vector::setValue(int s ...)
     *this = v;
 }
 
+void Vector::setValue(int pos, double value)
+{
+    this->data[pos][0] = value;
+}
+
 void Vector::setZero()
 {
     for(int i = 0; i < this->getHeight(); i++)
