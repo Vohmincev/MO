@@ -27,6 +27,7 @@ double Methods::y(double alpha)
 double Methods::dy(double alpha)
 {
     double h = /*max(pow(10,-7), pow(10,-5)*fabs(alpha));*/ 0.0005;
+    //return (y(alpha+h)-y(alpha-h))/(2.0*h);
     return (-y(alpha+2.0*h)+8.0*y(alpha+h)-8.0*y(alpha-h)+y(alpha-2.0*h))/(12.0*h);
 }
 
@@ -147,6 +148,7 @@ Vector Methods::findMinimum(string method, string expression, Vector start_x, in
     map["FR"] = &Methods::FR;
     map["Newton"] = &Methods::Newton;
     map["p"] = &Methods::Powell;
+    //map["ç"] = &Methods::Powell;
     Callback function = map[method];
     return (this->*function)(start_x, k);
 }
@@ -162,7 +164,7 @@ void Methods::swann(double x, double &a, double &b)
 
     for(int k=0; y(x+h) < y(x); k++ )
     {
-        h *= 2.0;
+        h *= 2;
         x += h;
     }
     a = min(x-h, x+h);
@@ -180,51 +182,6 @@ void Methods::swann2(double x, double &a, double &b)
     }
     a = min(x-h, x+h);
     b = max(x-h, x+h);
-}
-
-void Methods::swann3(double x, double &a, double &b, double &c, double d)
-{
-    double h=0.01;
-    double mu, la;
-    int k=0;
-    if(d!=0) x=d;
-    if (y(x+h)>y(x))
-        h=-h;
-    while(y(x+h) < y(x))
-    {
-        x=x+h;
-        k++;
-    }
-    mu=(x+x+h)/2;
-    la=x-0.5*h;
-    if(y(x)<y(mu))
-    {
-        b=x;
-        if(la<mu)
-        {
-            a=la;
-            c=mu;
-        }
-        else
-        {
-            a=mu;
-            c=la;
-        }
-    }
-    else
-    {
-        b=mu;
-        if(x<x+h)
-        {
-            a=x;
-            c=x+h;
-        }
-        else
-        {
-            a=x+h;
-            c=x;
-        }
-    }
 }
 
 double Methods::dichotomy(double &a, double &b)
@@ -295,35 +252,6 @@ double Methods::davidon(double a, double b)
     return x;
 }
 
-double Methods::DSK(double a, double b)
-{
-    this->swann(0.01, a, b);
-    double x=0, h=0.01, c=0, d=0;
-    int k=0;
-    double min;
-    do
-    {
-        this->swann3(x,a,b,c,d);
-        d = b+(0.5*(b-a)*(y(a)-y(c)))/(y(a)-2*y(b)+y(c));
-        if ( (b-d)/b <=EPSILON && (y(b)-y(d))/y(b)<=EPSILON )
-        {
-            min=(b+d)/2;
-            break;
-        }
-        else
-        {
-            if (y(b)<y(d))
-                x=b;
-            else
-                x=d;
-            h=h/2;
-        }
-        k++;
-    }
-    while(1);
-    return min;
-}
-
 Vector Methods::CCD(Vector start, int& k)
 {
     double alpha;
@@ -351,10 +279,6 @@ Vector Methods::CCD(Vector start, int& k)
         {
             break;
         }
-        //cout << "xt = "; xt.print();
-        //cout << "KOP: " << (this->xt - last).getNorm() << endl;
-        //if(k>15){ cout << "too much iterations" << endl << "last x valuse is "; return this->xt; }
-        //system("pause");
     }
     return this->xt;
 }
@@ -546,6 +470,7 @@ Vector Methods::Powell(Vector start_x, int& k)
     {
         pi[i] = new Vector(n);
         pi[i]->setValue(i,1);
+        //cout << " pi["<<i<<" = "; pi[i]->print();
     }
     //pi[n] = new Vector(n);
     //pi[n]->setValue(0,1);
@@ -557,28 +482,37 @@ while(1) {
         xt = xt + *pi[i] * alpha;
         A[i] = alpha;
         M[i] = f(x_last) - f(xt);
-        cout << "M["<<i<<"] = " << M[i] << endl;
+        //cout << "M["<<i<<"] = " << M[i] << endl;
     }
+    //alpha = davidon();
+    //xt = xt + *pi[0] * alpha;
     x_last = xt;
     d = xt - start_x;
+    //cout << "d = "; d.print();
     alpha = davidon();
     xt = xt + d*alpha;
-    if( (d.getNorm() <= EPSILON) && (fabs( (f(x_last) - f(start_x))/f(x_last) ) <=EPSILON) ) return xt;
+    //alpha = davidon();
+    //cout << "KOP: " << d.getNorm() << endl;
+    if( (alpha <= EPSILON) && (fabs( (f(x_last) - f(start_x))/f(x_last) ) <=EPSILON) ) return xt;
     int max = maxArr(A, n);
     pt = *pi[max];
-    if(4*M[max]*(f(x_last)-f(xt)) > (f(start_x)-f(x_last)-M[max])*(f(start_x)-f(x_last)-M[max]))
+    if(4*M[max]*(f(x_last)-f(xt)) >= pow((f(start_x)-f(x_last)-M[max]),2))
     {
         //pt = d/d.getNorm();
-        //*pi[0] = pt;
-        //for(int i = 1; i < n; i++)
+        //*pi[0] = ;
+        cout << "Imma here!" << endl;
+        d = d/d.getNorm();
+        //for(int i = 1; i <= n; i++)
         //{
-          //  *pi[i] = pt;
-
+            //cout << "Imma here!2" << endl;
+            //*pi[i] = *pi[i-1];
         //}
-        //*pi[n] = d;
+        *pi[n-1] = d;
+        //*pi[max] = d;
     }
     k++;
     start_x = xt;
+    cout << "xt = "; xt.print();
 }
 
 

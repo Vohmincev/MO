@@ -31,11 +31,8 @@ private:
     double max( double a, double b ); // максимум из двух переменных
     void swann(double x, double &a, double &b); // метод Свена-1
     void swann2(double x, double &a, double &b); // метод Свена-2
-    void swann3(double x, double &a, double &b, double &c, double d); // метод Свена-3
-    void swann4(double x, double &a, double &b); // метод Свена-4
     double dichotomy(double &a, double &b); // метод дихотомии
     double bolcano(double &a, double &b, int m); // метод Больцано
-    double DSK(double a, double b); // Метод ДСК
     double davidon(double a, double b); // Метод кубической интерполяции (Дэвидона)
     double davidon();
     Vector CCD(Vector, int&); // метод циклического покоординатного спуска - лаб. №4

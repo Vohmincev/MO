@@ -132,13 +132,13 @@
 1354811824 source:c:\users\sergey\desktop\учеба\lab5\methods.cpp
 	"methods.hpp"
 
-1354811867 source:c:\users\sergey\documents\github\mo\main.cpp
+1355694885 source:c:\users\sergey\documents\github\mo\main.cpp
 	<iostream>
 	<windows.h>
 	"methods.hpp"
 	<sstream>
 
-1355608414 c:\users\sergey\documents\github\mo\methods.hpp
+1355699101 c:\users\sergey\documents\github\mo\methods.hpp
 	"parser.hpp"
 	"Vector.hpp"
 	<map>
@@ -172,6 +172,6 @@
 1355594944 source:c:\users\sergey\documents\github\mo\vector.cpp
 	"Vector.hpp"
 
-1355608328 source:c:\users\sergey\documents\github\mo\methods.cpp
+1355700451 source:c:\users\sergey\documents\github\mo\methods.cpp
 	"methods.hpp"
 

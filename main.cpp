@@ -34,7 +34,7 @@ int main()
     string f6_("(x1-2)^2+(x2-1)^2+0.04/((0-0.25)*x1^2-x2^2+1)+5*(x1-2*x2+1)^2"); //!
     string f7_("100*(x2-x1^2)^2+(1-x1)^2+90*(x4-x3^2)^2+(1-x3)^3+10.1*((x2-1)^2+(x4-1)^2)+19.8*(x2-1)*(x4-1)"); //!
     string f8_("100*(x2-x1^2)^2+(1-x1)^2"); //!
-    string f9_("(x1+10*x2)^2+5*(x3-x4)^2+(x2-2*x3)^4+10*(x1-x4)^4");
+    string f9_("(0-12)*x2+4*x1^2+4*x2^2-4*x1*x2");
     string ff("(0-1)*12*x2+4*x1^2+4*x2^2-4*x1*x2");
     string kr("2*x1^2+2*x2^2-x1*x2+x1+10");
 
@@ -117,8 +117,9 @@ int main()
                 x = Methods(f8_, start_x).findMinimum(method, f8_, start_x, k);
                 break;
             case 9:
-                start_x.setValue(2, 0.0, 0.0);
-                x = Methods(kr, start_x).findMinimum(method, kr, start_x, k);
+               //start_x.setValue(2, 0.0, 0.0);
+                start_x.setValue(2, 1.0, 0.0);
+                x = Methods(f9_, start_x).findMinimum(method, f9_, start_x, k);
                 break;
             case 0:
                 return 0;
